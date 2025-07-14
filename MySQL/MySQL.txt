@@ -1,0 +1,338 @@
+------ Database ------
+1. MySQL 
+2. Postgres
+3. MongoDB
+
+1. What is a Database ? 
+   Database is an organized collection of data.
+   A method to manipulate and access the data.
+
+2. SQL vs MySQL 
+   SQL -> SQL is stand for Structured Query Language. which is used to talk to our
+   database.
+   MySQL -> MySQL is DBMS which uses SQL to talk with database.
+
+3. How to open MySQL in Command Prompt ? 
+   - Search CMD 
+   - Type MySQL -u root -p press enter 
+   - Enter password : diwaker@123
+
+4. Command for show all existing databases.
+   - SHOW DATABASES;
+
+5. Command for create new database.
+   - CREATE DATABASE <DATABASENAME>;
+
+6. Command for select a particular database.
+   - USE <DATABASENAME>;
+
+7. Command for check current database name.
+   - SELECT DATABASE();
+
+8. Command for deleting database.
+   - DROP DATABASE <DATABASENAME>;
+
+9. What is table in database ?
+   - A table is a collection of related data within the database which is use to store data              
+     in format of row & column. 
+
+10. Command for create table.
+   - CREATE TABLE <TABLENAME>(column name and their datatype);
+   - For example CREATE TABLE students(id INT , name VARCHAR(100) , course VARCHAR(100));
+
+11. How to check your table ? 
+   - DESC <TABLENAME>;
+
+12. How to insert values into a tables ?
+   - INSERT INTO <TABLENAME> VALUES (Values of columns);
+   - For example INSERT INTO students VALUES (322421,"Diwaker Kanojia","BCA");
+
+13. How to read data from table ? 
+   - SELECT * FROM <TABLENAME>;
+   - For example SELECT * FROM students;
+
+14. How to read a single particular column from table;
+   - SELECT <column name> FROM <TABLENAME>;
+   - For example SELECT name FROM students;
+
+15. How to read from database based on condition ? 
+   - SELECT * FROM students
+     WHERE <condition>;
+   - For example SELECT * FROM students
+                 WHERE id = 322421;
+
+16. How to modify/update data from table ?
+   - UPDATE <TABLENAME> 
+     SET <column name> = <value>
+     WHERE <condition>;
+   - For example UPDATE students 
+                 SET city = "New Delhi"
+                 WHERE id = 322421;
+
+17. How to delete data from a table ? 
+   - DELETE FROM <TABLENAME> 
+     WHERE <condition>;
+   - For example DELETE FROM students
+                 WHERE id = 322070;
+
+18. How delete a whole table from database ? 
+   - DROP TABLE <TABLENAME>;
+   - DROP TABLE students;
+
+19. What is not null ?
+   - Not null is constraints where not null represent that value of column cannot be null 
+     it is necessary to give the value of that particular column.
+
+20. How to set default value for columns ? 
+  - CREATE TABLE employee (
+     id INT NOT NULL,
+     name VARCHAR(50) ,
+     acc_type VARCHAR(50) DEFAULT 'Savings'
+     );
+
+21. What is primary key ? 
+   - The primary key is constraints use to uniquely identifies the row or tuple in a table.
+   - Primary key must contains unique value and cannot contains null values.
+   - A table can have only one primary key.
+
+22. How to use Auto Increment ?
+   - CREATE TABLE customer(
+      acc_no PRIMARY KEY AUTO_INCREMENT,
+      name VARCHAR(50) NOT NULL,
+      acc_type VARCHAR(50) NOT NULL DEFAULT 'Savings'
+   );
+
+23. How to change column name ?
+   - Using alias 
+   - example SELECT id AS       
+             'Student Id' FROM students;
+
+24. Some String Functions.
+   - Concat() : Use to Concatenate two
+                or more String values.
+     Example SELECT emp_id , CONCAT
+             (fname,lname) AS fullname FROM employee;
+
+   -Concat_ws() : Use to Concatenate
+                  two or more String values with '_'.
+      Example SELECT CONCAT_WS('-',
+               'Hi','Hello');
+
+   -Substring() : Use to take subpart
+                  from String.
+      Example SELECT SUBSTRING(name,1,
+                4) FROM employee;
+
+   -Replace() : Use to Replace 
+                Existing value with another String.
+      Example SELECT REPLACE(emp_id,10,
+              100) AS NewEmp_id
+              FROM employee; 
+
+   -Reverse() : Use to reverse the 
+                String.
+      EXample SELECT REVERSE(name)
+              FROM employee;
+
+   -UCASE() & LCASE() : Use to convert
+                        into upper and 
+                        lower case.
+      Example SELECT UCASE(name) FROM 
+              employee;
+              SELECT LCASE(name) FROM employee;
+
+   -CHAR_LENGTH() : Use to Count the
+                    length of String.
+      Example SELECT CHAR_LENGTH(name)
+              FROM employee;
+
+   -INSERT() : Use to insert 
+               Value between String.
+
+   -LEFT() & RIGHT() : Use to  
+                       take subpart from string from right and left.
+   -Repeat() : Use to repeat
+               value print value.
+
+   -TRIM() : Use to remove or trim
+             before and after space.
+
+25. What is Distinct in sql ?
+   - Use to get only unique value.
+      Example SELECT DISTINCT name FROM
+            employee;
+
+26. Use of ORDER BY keyword.
+   - Use to get the data in order.
+     Eample SELECT * FROM employee
+            ORDER BY name;
+
+27. Use of LIKE keyword.
+   - SELECT name FROM employee
+     WHERE name LIKE "%A%";
+   - It will select all name which
+     includes "a" in the name.
+   - SELECT name FROM employee
+     WHERE name LIKE "%____%";
+
+28. Use of LIMIT keyword.
+   - SELECT * FROM employee 
+     LIMIT 3;
+
+29. Use of Count keyword.
+   - It provides number of count of 
+     variable.
+   - SELECT COUNT(*) FROM employee;
+     this command return the number of record or number tuple/row in a table.
+
+30. GROUP BY keyword.
+   -  
+
+31. MAX() & MIN() 
+   - 
+
+32. SUB QUERIES .
+   - 
+
+33. SUM() & AVG()
+   - Use to get sum and average from 
+     table.
+
+34. DECIMAL datatype in sql.
+   - Use to store decimal values in 
+     table.
+   - DECIMAL(a,b)
+     a : total number of digit.
+     b : number of value upto decimal.
+
+35. FLOAT & DOUBLE datatype in sql.
+
+36. DATE , TIME , DATETIME datatype.
+   - DATE : yyyy-mm-dd
+   - TIME : HH:MM:SS
+   - DATETIME : yyyy-mm-dd HH:MM:SS
+
+37. CURDATE() , CURTIME() & NOW() 
+    function.
+   - CURDATE : yyyy-mm-dd     
+   - CURTIME : HH:MM:SS
+   - NOW : yyyy-mm-dd HH:MM:SS
+
+38. DAYNAME() , DAYOFMONTH() &
+    DAYOFWEEK() function in sql.
+
+39. Date formating Using DATE_FORMAT
+    (function) 
+
+40. DATE MATH function
+   - DATEDIFF(a,b) : get diff b/w two dates.
+   - DATE_ADD() : 
+   - DATE_SUB() : 
+
+41. Relation operator in dbms.
+   - = : equal to
+   - > : greater than
+   - < : less than
+   - >= : greater than equal to
+   - <= : less than equal to
+   - != : not equal to
+
+42. Logical operator in dbms.
+   - AND , OR 
+
+43. IN , NOT IN in keyword in dbms.
+   - IN() : it work as OR operator in dbms.
+          SELECT * FROM employee 
+          WHERE dept IN('Loan','Cash','Account');
+   - NOT IN () : it works as not operator in dbms.
+                 SELECT * FROM employee 
+                 WHERE dept NOT IN('Loan','Cash','Account');
+
+44. BETWEEN keyword in dbms.
+   - It is use to to get the data between range 
+     but it include the given condition.
+     
+45. CASE  syntax :
+   - SELECT fname,salary 
+     CASE
+     WHEN salary >= 50000 THEN 'Higher Salary'
+     ELSE 'Low Salary'
+     END AS 'Salary Category'
+     FROM employee;
+
+46. IS NULL : It is use to check null value in column.
+   - SELECT * FROM person
+     WHERE fname IS NULL;
+
+47. NOT LIKE : It is opposite of LIKE keyword.
+   - SELECT * FROM employee
+     WHERE name NOT LIKE "R%";
+
+48. CHECK AND UNIQUE constraints in dbms.
+   - CHECK is like a validation to check that entry value is right or not .
+   - UNIQUE is use to check that every columns should be 
+     unique.
+
+49. ALTER keyword in sql.
+   - It is use to add new column or delete/drop a column
+     in existing table.
+   - ALTER TABLE employee
+     ADD COLUMN contact VARCHAR(50); 
+   - ALTER TABLE employee
+     DROP COLUMN contact; 
+
+50. How to rename a column name ?
+   - By using RENAME keyword.
+   - ALTER TABLE employee
+     RENAME COLUMN emp_id TO Id;
+
+51. How to rename a table name ?
+   - By using RENAME keyword.
+   - ALTER TABLE employee
+     RENAME TO Employees; 
+
+52. How to modify a column ? Ex: Changing datatype or
+    adding default value etc.
+   - ALTER TABLE employee
+     MODIFY mob VARCHAR(20) DEFAULT 'Unkown';
+
+53. What is join ?
+   - JOIN operation is used to combine rows from two or
+     more tables based on a related column between them.
+   - Types of joins
+   1. CROSS JOIN : every row of table combine with another
+      row of table. it is also known as cartesian join.
+      SELECT * FROM table1,table2;
+   2. INNER JOIN : It return the row which is common 
+      between two table.
+      SELECT * FROM table1 
+      INNER JOIN table2 
+      ON condition ;
+   3. LEFT JOIN : It return the row from the left table
+      (table1) and that row which is common between two table.
+      SELECT * FROM table1 
+      LEFT JOIN table2 
+      ON condition ;
+   4. RIGHT JOIN : It is opposite of left join.
+      SELECT * FROM table1 
+      RIGHT JOIN table2 
+      ON condition ;
+
+54. What is HAVING CLAUSE ?
+   - GROUP BY cannot work with WHERE so we use HAVING
+     CLAUSE.
+
+55. ROLL UP CLAUSE ?
+   - It is use to get the total. It is used by GROUP BY.
+   - SELECT student_name , SUM(fees) FROM inst_info 
+     GROUP BY student_name
+     WITH ROLL UP; 
+
+56. What is STORED ROUTINE ?
+   - It is type of function which is used to do repeated
+     task.
+   - Type of STORED ROUTINE
+     1. STORED PROCEDURE.
+     2. USER DEFINED FUNCTION.
+
+ 

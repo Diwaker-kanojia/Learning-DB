@@ -1,0 +1,29 @@
+1. What is Mongodb ?
+ - MongoDB is an open-source, document-oriented NoSQL database
+   management system. 
+
+2. Who create MongoDB ?
+ - MongoDB is created by 10gen company after the known as
+   mongodb.
+
+3. How to show existing database in mongodb ?
+ - show dbs;
+
+4. How to change database ?
+ - use <database_name>.
+
+5. How to drop or delete database ?
+ - db.dropDatabase();
+
+6. How show existing collections ?
+ - show collections;
+
+7. How to create collections ?
+ - db.createCollection('collection-name');
+
+8. How to drop collection ?
+ - db.<collection-name>.drop();
+
+9. What is ordered insertion and unordered insertion in mongodb ?
+ - 
+
